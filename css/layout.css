@@ -1,9 +1,11 @@
-.navbar {
+ .navbar {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
   padding: 20px 40px;
-}
+} 
+ 
+
 
 .logo {
   height: 100px ; width:100px;
@@ -22,20 +24,7 @@
   opacity: 0.8;
 }
 
-/* .main {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  height: calc(100vh - 140px);
-  gap: 20px;
-  padding: 20px 40px;
-}
 
-.calculator-view {
-  background: var(--glass);
-  border-radius: 20px;
-  padding: 40px;
-  position: relative;
-} */
 .main {
   display: grid;
   grid-template-columns: 260px 1fr;

@@ -13,8 +13,8 @@ function loadSIPCalculator() {
         <div class="input-group">
           <label>Monthly Investment (₹)</label>
           <input type="number" id="sipAmount"
-            min="100" max="500000" step="500" value="5000">
-          <small>₹500 – ₹1,00,000</small>
+            min="100" max="500000" step="50" value="5000">
+          <small>₹100 – ₹5,00,000</small>
         </div>
 
         <div class="input-group">
@@ -60,24 +60,24 @@ function initSIPLogic() {
   const amountEl = document.getElementById("sipAmount");
   const rateEl = document.getElementById("sipRate");
   const yearsEl = document.getElementById("sipYears");
-
-  function clamp(val, min, max) {
-    return Math.min(Math.max(val, min), max);
-  }
+  const msg = document.getElementById("sipMessage");
 
   function calculateSIP() {
-    let monthlyInvestment = Number(amountEl.value);
-    let annualRate = Number(rateEl.value);
-    let years = Number(yearsEl.value);
+    const monthlyInvestment = Number(amountEl.value);
+    const annualRate = Number(rateEl.value);
+    const years = Number(yearsEl.value);
 
-    // ✅ enforce valid ranges
-    monthlyInvestment = clamp(monthlyInvestment, 500, 100000);
-    annualRate = clamp(annualRate, 6, 18);
-    years = clamp(years, 1, 40);
-
-    amountEl.value = monthlyInvestment;
-    rateEl.value = annualRate;
-    yearsEl.value = years;
+    // ❗ validation (do NOT force values)
+    if (
+      monthlyInvestment < 100 || monthlyInvestment > 500000 ||
+      annualRate < 6 || annualRate > 18 ||
+      years < 1 || years > 40
+    ) {
+      msg.className = "status risk";
+      msg.textContent =
+        "⚠️ Please enter values within the suggested range.";
+      return;
+    }
 
     const months = years * 12;
     const monthlyRate = annualRate / 12 / 100;
@@ -94,12 +94,10 @@ function initSIPLogic() {
     document.getElementById("sipReturns").textContent = formatINR(returns);
     document.getElementById("sipTotal").textContent = formatINR(futureValue);
 
-    const msg = document.getElementById("sipMessage");
-
     if (years >= 15) {
       msg.className = "status secure";
       msg.textContent =
-        "🟢 Excellent long-term SIP. Power of compounding works best here.";
+        "🟢 Excellent long-term SIP. Power of compounding works best.";
     } else if (years >= 7) {
       msg.className = "status ok";
       msg.textContent =
@@ -107,7 +105,7 @@ function initSIPLogic() {
     } else {
       msg.className = "status risk";
       msg.textContent =
-        "🔴 SIP benefits are limited for very short durations.";
+        "🔴 SIP benefits are limited for short durations.";
     }
   }
 

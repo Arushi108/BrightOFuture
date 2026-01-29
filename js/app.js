@@ -56,3 +56,4 @@ const menu = document.querySelector(".calculator-menu");
 hamburger.addEventListener("click", () => {
   menu.classList.toggle("show");
 });
+
