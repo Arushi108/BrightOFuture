@@ -60,6 +60,10 @@
   display: grid;
   gap: 20px;
 }
+.input-group small {
+  font-size: 12px;
+  opacity: 0.7;
+}
 
 .input-group {
   background: rgba(255,255,255,0.08);
@@ -314,3 +318,8 @@ select {
 .note.green { color: #22c55e; }
 .note.orange { color: #f59e0b; }
 .note.red { color: #ef4444; }
+@media (max-width: 768px) {
+  .calculator-grid {
+    grid-template-columns: 1fr;
+  }
+}
