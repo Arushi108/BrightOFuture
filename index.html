@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="J6qbcH1WBcVFNHFl75nmp31gXzGLc2CIAOoOctPJdeM" />
+  <title>BrightoFuture | Financial Calculators</title>
+<script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/animations.css?v=5">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-left">
+    <img src="images/logo.png" class="logo">
+  </div>
+
+  <div class="nav-center">
+    <h1>BrightoFuture</h1>
+    <p>Smart Financial Calculators</p>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- LEFT CALCULATOR SLIDER -->
+  <aside class="calculator-menu">
+    <div class="calc-card active">SIP Calculator</div>
+    <div class="calc-card">Lumpsum Calculator</div>
+    <div class="calc-card">DynamicSIP</div>
+    <div class="calc-card">EMI Calculator</div>
+    <div class="calc-card">HLV Calculator</div>
+    <div class="calc-card">CAGR Calculator</div>
+    <div class="calc-card">Education Loan</div>
+  </aside>
+
+  <!-- CENTER CONTENT -->
+  <section class="calculator-view">
+
+  <!-- Assistant -->
+  <div class="assistant" id="assistant">
+    <div class="speech">
+      👋 Hi! I’m your financial assistant.<br>
+      Please select a calculator from the left.
+    </div>
+
+    <img src="images/advisor-man.gif" alt="Financial Advisor" class="advisor-animation">
+
+  </div>
+
+  <!-- Dynamic Calculator Content -->
+  <div id="calculator-content" class="calculator-content hidden">
+    <!-- Calculator UI will be injected here -->
+  </div>
+
+</section>
+
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <img src="images/me.jpeg" class="advisor-img">
+  <div>
+    <strong>Vivek Kansal</strong><br>
+    Financial Advisor | 9465573730
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+<script src="js/animations.js"></script>
+<script src="js/calculators/hlv.js"></script>
+<script src="js/calculators/sip.js"></script>
+<script src="js/calculators/dynamic-sip.js"></script>
+<script src="js/calculators/emi.js"></script>
+<script src="js/calculators/lumpsum.js"></script>
+<script src="js/calculators/cagr.js"></script>
+</body>
+</html>
