@@ -50,10 +50,24 @@ function loadCalculator(name) {
   }
 }
 
-const hamburger = document.getElementById("hamburger");
-const menu = document.querySelector(".calculator-menu");
 
-hamburger.addEventListener("click", () => {
-  menu.classList.toggle("show");
-});
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.querySelector(".calculator-menu");
+
+  // Toggle menu on hamburger click
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent document click
+    menu.classList.toggle("show");
+  });
+
+  // Prevent menu clicks from closing it
+  menu.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Close menu when clicking anywhere else
+  document.addEventListener("click", () => {
+    menu.classList.remove("show");
+  });
+
 
