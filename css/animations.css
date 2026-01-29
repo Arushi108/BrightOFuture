@@ -318,8 +318,66 @@ select {
 .note.green { color: #22c55e; }
 .note.orange { color: #f59e0b; }
 .note.red { color: #ef4444; }
-@media (max-width: 768px) {
-  .calculator-grid {
-    grid-template-columns: 1fr;
+
+
+
+/* =========================
+   MOBILE & TABLET LAYOUT
+   ========================= */
+@media (max-width: 900px) {
+
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Hide sidebar by default */
+  .calculator-menu {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    width: 220px;
+    background: #020617;
+    border-radius: 12px;
+    padding: 10px;
+    display: none;
+    z-index: 999;
+  }
+
+  .calculator-menu.show {
+    display: block;
+  }
+
+  .calc-card {
+    margin-bottom: 8px;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  /* Full width calculator */
+  .calculator-view {
+    width: 100%;
+    padding: 15px;
+  }
+
+  /* Assistant centered */
+  .assistant {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .advisor-animation {
+    height: 260px;
   }
 }
+
+/* Desktop only */
+.hamburger {
+  display: none;
+}
+

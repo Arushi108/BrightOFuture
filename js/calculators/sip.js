@@ -13,7 +13,7 @@ function loadSIPCalculator() {
         <div class="input-group">
           <label>Monthly Investment (₹)</label>
           <input type="number" id="sipAmount"
-            min="500" max="100000" step="500" value="5000">
+            min="100" max="500000" step="500" value="5000">
           <small>₹500 – ₹1,00,000</small>
         </div>
 
